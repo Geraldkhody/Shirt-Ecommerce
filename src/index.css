@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    /* font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Cantarell, 'Helvetica Neue', sans-serif; */
+    font-family: serif;
+    box-sizing: border-box;
+}
+
