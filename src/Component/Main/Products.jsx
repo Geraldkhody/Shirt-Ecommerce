@@ -32,15 +32,10 @@ const Products = () => {
   //   ))
   // </div>
 
-  const productsShowHandler =  (id) => {
-    fetch("http://localhost:5000/products").then(res => {
-      return res.json
-    }).then(data => {
-      console.log(data)
-    })
-    // const response = await fetch('http://localhost:5000/products')
-    // const data = await response.json
-    // console.log(data);
+  const productsShowHandler = async (id) => {
+    const response = await fetch('http://localhost:5000/products')
+    const data = await response.json()
+    console.log(data);
   }
 
   return (
