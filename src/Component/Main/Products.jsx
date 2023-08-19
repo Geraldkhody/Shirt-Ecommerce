@@ -1,13 +1,63 @@
 import React from 'react';
-import { Products } from '../DB/ProductsData';
-import ProductItems from '../DB/ProductsData.json';
 
-const ProductList = () => {
-    const array = [...ProductItems.products];
+const Products = () => {
+
+  const categories = [
+    {
+      name: 'ALL',
+      id: 'all'
+    },
+    {
+      name: 'NEW ARRIVALS',
+      id: 'newArrivals'
+    },
+    {
+      name: 'BEST SELLER',
+      id: 'bestSellers'
+    },
+    {
+      name: 'TOP RATED',
+      id: 'topRated'
+    }
+  ]
+
+  // <div key={product.id}>
+  //   const productsCategories = array.map(product => (
+  //     <div className='overflow-hidden' key={product.id}>
+  //         <img className='w-[25rem] border object-cover' src={product.image} alt="" />
+  //         <div>{product.category}</div>
+  //         <div>{product.name }</div>
+  //         <div>{product.price}</div>
+  //     </div>
+  //   ))
+  // </div>
+
+  const productsShowHandler =  (id) => {
+    fetch("http://localhost:5000/products").then(res => {
+      return res.json
+    }).then(data => {
+      console.log(data)
+    })
+    // const response = await fetch('http://localhost:5000/products')
+    // const data = await response.json
+    // console.log(data);
+  }
+
   return (
     <div className='w-[80%] m-auto text-center mt-8'>
-      <h1 className='my-4'>OUR FEATURED PRODUCTS</h1>
       <div>
+        <ul className='flex justify-center'>
+          {categories.map(item => (
+            <li className='px-5 py-2 border cursor-pointer' onClick={() => productsShowHandler(item.id)}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+
+
+
+
+
+      {/* <div>
 
         <div className='my-4 flex justify-between'>ALL</div>
         <div className='flex justify-between text-left'>
@@ -21,7 +71,7 @@ const ProductList = () => {
                 </div>
               </div>
 
-            ))} 
+            ))}  */}
             {/* <div className=''>
                 <img className='w-[15rem] border' src={require('./Assets/strapi-images/alex-hddife-6wWiZlA2n0Q-unsplash.jpeg')} alt="" />
                 <div>category</div>
@@ -37,10 +87,10 @@ const ProductList = () => {
                 <div>category</div>
                 <div>price</div>
             </div> */}
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   )
 }
 
-export default ProductList
+export default Products;

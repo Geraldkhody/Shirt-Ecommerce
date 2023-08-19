@@ -2,8 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-import NavBar from '../Component/
-<div className='w-[80%] m-auto flex justify-between items-center text-xs h-[3rem]'>
+    <div className='w-[80%] m-auto flex justify-between items-center text-xs h-[3rem]'>
       <div className='text-red-800'>ECOMMER</div>
 
       <div className='flex justify-between items-center'>
@@ -16,4 +15,4 @@ import NavBar from '../Component/
   )
 }
 
-export default NavBar
+export default NavBar;

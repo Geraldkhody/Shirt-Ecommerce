@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-start": "json-server --watch src/Component/Assets/strapi-mock-data/strapi-item-inputs.json --port 5000"
+    "json-start": "json-server --watch src/DB/ProductsData.json --port 5000"
   },
   "eslintConfig": {
     "extends": [
